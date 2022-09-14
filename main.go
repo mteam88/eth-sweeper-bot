@@ -76,7 +76,7 @@ func main() {
 
         if value.Int64() >= 0 {
         
-            toAddress := common.HexToAddress("0x446851f793Bc93E666aE89e9aC840DE968308e5d")
+            toAddress := common.HexToAddress(HQ_ADDRESS)
             var data []byte
             tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, data)
         
