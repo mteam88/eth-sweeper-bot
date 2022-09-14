@@ -32,7 +32,7 @@ func checkerr(err error) {
 }
 
 func main() {
-    godotenv.Load(".envrc")
+    godotenv.Load(".envrc", ".env")
     
     fmt.Println(os.Getenv("NODE_ENDPOINT"))
     
@@ -75,8 +75,9 @@ func main() {
         fmt.Println("value: ", value)
 
         if value.Int64() >= 0 {
+            fmt.Println("Valid balance: Initialize transaction")
         
-            toAddress := common.HexToAddress(HQ_ADDRESS)
+            toAddress := common.HexToAddress(os.Getenv("HQ_ADDRESS"))
             var data []byte
             tx := types.NewTransaction(nonce, toAddress, value, gasLimit, gasPrice, data)
         
@@ -100,12 +101,14 @@ func main() {
                 time.Sleep(sleeptime)
                 _, isPending, err := client.TransactionByHash(context.Background(), txHash)
                 checkerr(err)
-                fmt.Println("isPending: ", isPending)
+                fmt.Println("Waiting for transaction to finish...")
                 if !isPending {
                     fmt.Println("TX done.")
                     break
                 }
             }
+        } else {
+            fmt.Println("Balance too low. Waiting...")
         }
     }
 }
