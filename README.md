@@ -1,11 +1,12 @@
-# goethwithdrawbot
+# test sweeper bot
+A very crude implementation of a sweeper bot on for testing purposes
 Constantly attempt to withdraw all ETH in provided wallet.
 
 ## Installation
 Clone this repo with 
 ```
-git clone https://github.com/mteam88/goethwithdrawbot
-cd goethwithdrawbot
+git clone https://github.com/mteam88/test-sweeper
+cd test-sweeper
 ```
 You must have `go` installed.
 
@@ -14,7 +15,7 @@ Run
 ```
 go run main.go
 ```
-in `goethwithdrawbot` directory.
+in `test-sweeper` directory.
 
 IMPORTANT: Complete the configuration steps below before running.
 
@@ -22,6 +23,6 @@ IMPORTANT: Complete the configuration steps below before running.
 Set the Environment variables below manually or place them in a `.envrc` or `.env` file.
 ```
 NODE_ENDPOINT = "YOUR NODE PROVIDER HERE" // Usually a local node (ganache, geth) or a hosted node (infura, alchemy.io)
-TARGET_PRIVATE_KEY = "YOUR TARGET PRIVATE KEY HERE"
+TARGET_PRIVATE_KEY = "YOUR TARGET PRIVATE KEY HERE" // Target wallet to sweep
 HQ_ADDRESS = "YOUR PERSONAL ADDRESS HERE" // This is where the ETH will be sent.
 ```
