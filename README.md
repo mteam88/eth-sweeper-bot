@@ -5,8 +5,8 @@ Constantly attempt to withdraw all ETH in provided wallet.
 ## Installation
 Clone this repo with 
 ```
-git clone https://github.com/mteam88/test-sweeper
-cd test-sweeper
+git clone https://github.com/mteam88/eth-sweeper-bot
+cd eth-sweeper-bot
 ```
 You must have `go` installed.
 
@@ -15,7 +15,7 @@ Run
 ```
 go run main.go
 ```
-in `test-sweeper` directory.
+in `eth-sweeper-bot` directory.
 
 IMPORTANT: Complete the configuration steps below before running.
 
